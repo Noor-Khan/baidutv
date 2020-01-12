@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <base-layout />
-  </div>sfdsf jjgjggjgjgjgj
-</template>sdafdsafsadfdsa
+  </div>
+</template>
 <script>
 import baseLayout from "./Layout/BaseLayout";
 export default {
