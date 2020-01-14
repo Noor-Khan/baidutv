@@ -1,7 +1,9 @@
 <template>
   <div>
     <navbar />
-    <router-view />
+    <div class="base-layout">
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
@@ -12,3 +14,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.base-layout {
+  position: relative;
+}
+</style>
