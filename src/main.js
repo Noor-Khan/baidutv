@@ -2,12 +2,15 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import './assets/scss/index.scss'
+import 'vueperslides/dist/vueperslides.css'
 import {
   BootstrapVue,
-  IconsPlugin
+  IconsPlugin,
+  CarouselPlugin
 } from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(CarouselPlugin)
 
 Vue.config.productionTip = false;
 
