@@ -3945,6 +3945,11 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hooper@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/hooper/-/hooper-0.3.4.tgz#afb425d23f47f931ce2a9c00b755992cb0e2bcf9"
+  integrity sha512-hV1c+MCiCfVjltdvZIgTrGYHInvhKiNLVNOT/hRWbfjZNIS9H6F6ZUPeaxhxrYkjsEL96Z0RIs+4YPoBqrrrHQ==
+
 hoopy@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/hoopy/-/hoopy-0.1.4.tgz#609207d661100033a9a9402ad3dea677381c1b1d"
@@ -7944,11 +7949,6 @@ vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
-
-vueperslides@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/vueperslides/-/vueperslides-2.8.0.tgz#47ed74c2dbaa3b0680a6566512e406339cb89553"
-  integrity sha512-CY75FHQ+vMr0fx0ozdBhoB1bXzs1SuU/ZKmZ3+3gVeRGHHJwkVJQhQLe4xsfpK1Lqo8HIYu9X4YdmNqetAwT5w==
 
 watchpack@^1.6.0:
   version "1.6.0"

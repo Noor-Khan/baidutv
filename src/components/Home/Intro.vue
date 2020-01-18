@@ -1,65 +1,49 @@
 <template>
   <section id="intro">
-    <vueper-slides class="no-shadow w-100" :touchable="false" :arrows="false">
-      <vueper-slide v-for="(slide, index) in slides" :key="index">
-        <template v-slot:content>
-          <b-container>
-            <b-row>
-              <b-col md="6" xs="12">
-                <div class="intro-left">
-                  <div class="intro-heading">
-                    <h2>{{slide.title}}</h2>
-                    <h3>{{slide.content}}</h3>
-                  </div>
-                  <div class="intro-btn">
-                    <primary-button text="Download" btnClass="white" />
-                  </div>
+    <Hooper :centerMode="true"
+        :wheelControl="false"
+        :mouseDrag="false">
+      <slide v-for="(slide, index) in slides" :key="index">
+        <b-container>
+          <b-row>
+            <b-col md="6" xs="12" sm="12">
+              <div class="intro-left">
+                <div class="intro-heading">
+                  <h2>{{ slide.title }}</h2>
+                  <h3>{{ slide.content }}</h3>
                 </div>
-              </b-col>
-              <b-col md="6" xs="12">
-                <div class="intro-right">
-                  <div class="intro-img">
-                    <img src="../../assets/images/tablet2.png" alt="tablet" class="img-fluid" />
-                  </div>
+                <div class="intro-btn">
+                  <primary-button text="Download" btnClass="white" />
                 </div>
-              </b-col>
-            </b-row>
-          </b-container>
-        </template>
-      </vueper-slide>
-    </vueper-slides>
-    <b-carousel
-      id="carousel-1"
-      v-model="slides"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1024"
-      img-height="480"
-      style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-      <!-- Text slides with image -->
-      <b-carousel-slide
-        v-for="(slide, index) in slides"
-        :key="index"
-        img-src="https://picsum.photos/1024/480/?image=54"
-      >
-        <h2>{{slide.title}}</h2>
-      </b-carousel-slide>
-    </b-carousel>
+              </div>
+            </b-col>
+            <b-col md="6" xs="12" sm="12">
+              <div class="intro-right">
+                <div class="intro-img">
+                  <img src="../../assets/images/tablet2.png" alt="tablet" class="img-fluid" />
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </slide>
+      <hooper-pagination slot="hooper-addons"></hooper-pagination>
+    </Hooper>
   </section>
 </template>
 <script>
-import { VueperSlides, VueperSlide } from "vueperslides";
+import { Hooper, Slide, Pagination as HooperPagination } from "hooper";
+import "hooper/dist/hooper.css";
+// import { VueperSlides, VueperSlide } from "vueperslides";
 import PrimaryButton from "../Buttons/Button";
 export default {
   components: {
-    PrimaryButton,
-    VueperSlide,
-    VueperSlides
+    Hooper,
+    Slide,
+    HooperPagination,
+    PrimaryButton
+    // VueperSlide,
+    // VueperSlides
   },
   data() {
     return {

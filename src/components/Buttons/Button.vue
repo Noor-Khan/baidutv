@@ -32,10 +32,32 @@ export default {
   background-color: #5733ff;
   border-color: #5733ff;
   color: #fff;
+  &:hover {
+    background-color: transparent;
+    border-color: #5733ff;
+    color: #5733ff;
+  }
+  &:focus {
+    background-color: transparent;
+    border-color: #5733ff;
+    color: #5733ff;
+    box-shadow: none;
+  }
 }
 .btn-white {
   background-color: #fff;
   color: #5733ff;
   border-color: #fff;
+  &:hover {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+  }
+  &:focus {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    box-shadow: none;
+  }
 }
 </style>

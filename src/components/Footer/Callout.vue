@@ -25,19 +25,11 @@ export default {
 <style lang="scss" scoped>
 #callout {
   position: relative;
-  background-color: #5733ff;
+  background-image: url("../../assets/images/callout-bg.png");
+  background-size: cover;
+  background-position: top;
+  padding-top: 40px;
   padding-bottom: 40px;
-  &:before {
-    content: "";
-    position: absolute;
-    background-image: url("../../assets/images/calloutCurve.png");
-    background-size: cover;
-    background-position: top;
-    width: 100%;
-    height: 75px;
-    bottom: 99%;
-    left: 0;
-  }
   .callout-heading {
     h2 {
       color: #fff;
@@ -46,7 +38,7 @@ export default {
     }
   }
   .callout-btn {
-    margin-top: 25px;
+    margin-top: 35px;
   }
 }
 </style>

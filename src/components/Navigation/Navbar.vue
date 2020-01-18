@@ -1,7 +1,7 @@
 <template>
   <header id="header">
     <b-navbar type="light" toggleable="lg">
-      <b-navbar-brand href="#">Logo</b-navbar-brand>
+      <b-navbar-brand>Logo</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" @click="navIconChange">
         <b-icon-list v-if="this.navBtn"></b-icon-list>
@@ -10,12 +10,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-5">
-          <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item href="#">Concept</b-nav-item>
-          <b-nav-item href="#">Product</b-nav-item>
-          <b-nav-item href="#">Download</b-nav-item>
-          <b-nav-item href="#">Company</b-nav-item>
-          <b-nav-item href="#">Legal</b-nav-item>
+          <li class="nav-item" v-for="(route, index) in navRoutes" :key="index">
+            <router-link :to="route.path">{{ route.name }}</router-link>
+          </li>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -30,8 +27,12 @@
 export default {
   data() {
     return {
+      navRoutes: null,
       navBtn: true
     };
+  },
+  created() {
+    this.navRoutes = this.$router.options.routes;
   },
   methods: {
     navIconChange() {
