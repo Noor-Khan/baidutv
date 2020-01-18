@@ -1,5 +1,5 @@
 @media(min-width: 1024px) {
-  .home {
+  #Home {
     #intro {
       .intro-right {
         .intro-img {
@@ -12,79 +12,71 @@
   }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: 1200px) {
+  #Home {
+    #intro {
+      height: 65vh;
+    }
+  }
+}
+
+@media(max-width: 1023px) {
 
   // Homepage SCSS for Ipad-pro
-  .home {
+  #Home {
     #intro {
-      height: 50vh;
+      height: 70vh;
 
-      .vueperslides {
-        .vueperslides__inner {
-          height: unset;
-
-          .vueperslides__parallax-wrapper {
-            padding-bottom: 40% !important;
-
-            .row {
-              .intro-left {
-                .intro-heading {
-                  h2 {
-                    font-size: 48px;
-                  }
-
-                  h3 {
-                    font-size: 32px;
-                  }
-                }
-              }
-            }
+      .intro-left {
+        .intro-heading {
+          h2 {
+            font-size: 48px;
           }
 
-          .vueperslides__bullets {
-            bottom: 0;
+          h3 {
+            font-size: 32px;
           }
         }
-      }
-    }
-
-    #ScreenTime {
-      .screen-time-heading {
-        margin-top: -5rem;
-      }
-
-      .screen-time-img {
-        margin-top: -14rem;
-      }
-    }
-
-    #SafeVideos {
-      .safe-videos-heading {
-        margin-top: 1rem;
-      }
-    }
-
-    #quizzes {
-      .quize-heading {
-        margin-top: 2rem;
       }
     }
   }
 }
 
-@media(max-width: 768px) {
+#ScreenTime {
+  .screen-time-heading {
+    margin-top: -5rem;
+  }
+
+  .screen-time-img {
+    margin-top: -14rem;
+  }
+}
+
+#SafeVideos {
+  .safe-videos-heading {
+    margin-top: 1rem;
+  }
+}
+
+#quizzes {
+  .quize-heading {
+    margin-top: 2rem;
+  }
+}
+
+@media(max-width: 767px) {
   h2 {
-    font-size: 36px;
+    font-size: 42px !important;
     line-height: 48px;
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 28px !important;
     line-height: 38px;
   }
 
   // Homepage SCSS for Ipad
-  .home {
+  #Home {
     #ScreenTime {
       .screen-time-heading {
         margin-top: -3rem;
@@ -97,6 +89,15 @@
     }
 
     #SafeVideos {
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      background-color: $color-primary;
       padding-top: 0;
 
       &::before {
@@ -131,40 +132,48 @@
         text-align: center;
       }
     }
-  }
 
-  #intro {
-    .row {
-      flex-direction: column-reverse;
+    #intro {
+      background-image: unset !important;
+      background-color: $color-primary;
 
-      .intro-left {
-        text-align: center;
+      .hooper {
+        height: 600px;
 
-        .intro-heading {
-          margin-top: -1rem;
+        .hooper-pagination {
+          bottom: 2rem;
+        }
+      }
 
-          h2 {
-            font-size: 48px;
+      .row {
+        flex-direction: column-reverse;
+
+        .intro-left {
+          text-align: center;
+
+          .intro-heading {
+            margin-top: -2rem;
+
           }
-        }
 
-        .intro-btn {
-          margin-top: 10px;
-        }
+          .intro-btn {
+            margin-top: 10px;
+          }
 
-        .intro-img {
-          img {
-            max-width: 30rem;
+          .intro-img {
+            img {
+              max-width: 30rem;
+            }
           }
         }
       }
     }
+  }
 
-    .vueperslides {
-      .vueperslides__inner {
-        .vueperslides__bullets {
-          bottom: 3rem;
-        }
+  #Concept {
+    #PerfectExcuse {
+      .row {
+        flex-direction: column-reverse;
       }
     }
   }
@@ -181,108 +190,110 @@
     line-height: 38px;
   }
 
-  #intro {
-    height: 100vh !important;
+  #Home {
 
-    .row {
-      .intro-right {
-        .intro-img {
-          margin-top: 5rem;
+    #intro {
+      height: 100vh !important;
+
+      .hooper {
+        height: 720px;
+
+        .hooper-pagination {
+          bottom: 8rem;
+        }
+      }
+
+      .row {
+        .intro-right {
+          .intro-img {
+            margin-top: 5rem;
+          }
         }
       }
     }
 
-    .vueperslides {
-      .vueperslides__inner {
-        height: 100vh !important;
+    #ScreenTime {
+      .screen-time-heading {
+        margin-top: 20px;
+        text-align: center;
+      }
 
+      .screen-time-btn {
+        text-align: center;
+      }
+    }
+
+    #SafeVideos {
+      padding: 5rem 0;
+
+      &::before {
+        bottom: 98%;
+      }
+
+      .safe-videos-heading {
+        margin-top: 20px !important;
+        text-align: center;
+      }
+
+      .safe-videos-img {
+        margin-top: 2rem !important;
+        padding-bottom: 0;
+      }
+
+      .safe-videos-btn {
+        text-align: center;
+      }
+    }
+
+    #quizzes {
+      .quize-heading {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .quize-btn {
+        text-align: center;
+      }
+    }
+
+    #callout {
+      .callout-heading {
+        h2 {
+          font-size: 36px;
+        }
+      }
+    }
+
+    #footer {
+      .copyright-sentence {
+        p {
+          font-size: 14px;
+        }
       }
     }
   }
-
-  #ScreenTime {
-    .screen-time-heading {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .screen-time-btn {
-      text-align: center;
-    }
-  }
-
-  #SafeVideos {
-    padding-top: 0;
-
-    &::before {
-      bottom: 98%;
-    }
-
-    .safe-videos-heading {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .safe-videos-img {
-      margin-top: 0;
-      padding-bottom: 0;
-    }
-
-    .safe-videos-btn {
-      text-align: center;
-    }
-  }
 }
 
-#quizzes {
-  .quize-heading {
-    margin-top: 20px;
-    text-align: center;
-  }
+@media(max-width: 375px) {
+  #Home {
+    #intro {
+      padding: 0 0 !important;
 
-  .quize-btn {
-    text-align: center;
-  }
-}
-
-#callout {
-  .callout-heading {
-    h2 {
-      font-size: 36px;
-    }
-  }
-}
-
-#footer {
-  .copyright-sentence {
-    p {
-      font-size: 14px;
-    }
-  }
-}
-
-// Slider SCSS
-#intro {
-  .vueperslides {
-    .vueperslides__inner {
-      height: 100vh;
-
-      .vueperslides__parallax-wrapper {
-        height: 100%;
+      .hooper {
+        height: 700px;
       }
+    }
+  }
+}
 
-      .vueperslides__bullets {
-        bottom: 7rem;
+@media(max-width: 320px) {
+  #Home {
+    #intro {
+      align-items: unset !important;
+      padding: 1rem 0 !important;
 
-        .vueperslides__bullet--active .default {
-          border-color: #fff !important;
-          border-width: 9px;
-          background-color: #fff;
-        }
-
-        .vueperslides__bullet .default {
-          border-color: #fff !important;
-        }
+      .hooper {
+        height: 660px;
       }
     }
   }

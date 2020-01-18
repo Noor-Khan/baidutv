@@ -29,16 +29,24 @@ header {
             }
 
             .navbar-nav {
-                .nav-link {
-                    padding: 20px 15px;
-                    // text-align: left;
-                    color: $color-black;
-                    border-bottom: 2px solid transparent;
-                    transition-duration: 0.3s;
+                .nav-item {
+                    a {
+                        padding: 20px 15px;
+                        color: $color-black;
+                        border-bottom: 2px solid transparent;
+                        transition-duration: 0.3s;
+                        text-decoration: none;
+                    }
 
-                    &:hover {
+                    .router-link-exact-active {
                         color: $color-primary;
                         border-bottom: 2px solid $color-primary;
+
+                        &:hover {
+                            color: $color-primary;
+                            border-bottom: 2px solid $color-primary;
+                        }
+
                     }
                 }
             }
