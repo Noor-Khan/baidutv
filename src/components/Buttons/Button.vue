@@ -32,6 +32,27 @@ export default {
   background-color: #5733ff;
   border-color: #5733ff;
   color: #fff;
+  box-shadow: 1px 1px 7px #8873eb80;
+  &:hover {
+    background-color: transparent;
+    border-color: #5733ff;
+    color: #5733ff;
+  }
+  &:focus {
+    background-color: transparent;
+    border-color: #5733ff;
+    color: #5733ff;
+    box-shadow: none;
+  }
+}
+.btn-register {
+  padding: 10px 20px;
+  width: 155px;
+  font-size: 16px;
+  background-color: #5733ff;
+  border-color: #5733ff;
+  color: #fff;
+  box-shadow: 1px 1px 7px #8873eb80;
   &:hover {
     background-color: transparent;
     border-color: #5733ff;
@@ -48,6 +69,7 @@ export default {
   background-color: #fff;
   color: #5733ff;
   border-color: #fff;
+  box-shadow: 1px 1px 7px #ffffff80;
   &:hover {
     background-color: transparent;
     border-color: #fff;

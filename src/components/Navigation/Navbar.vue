@@ -17,19 +17,23 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-button pill variant="primary" class="register-btn">Register</b-button>
+          <primary-button text="Register" btnClass="register" />
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </header>
 </template>
 <script>
+import PrimaryButton from "../Buttons/Button";
 export default {
   data() {
     return {
       navRoutes: null,
       navBtn: true
     };
+  },
+  components: {
+    PrimaryButton
   },
   created() {
     this.navRoutes = this.$router.options.routes;
