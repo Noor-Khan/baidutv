@@ -51,12 +51,8 @@ header {
                 }
             }
 
-            .register-btn {
-                padding: 7px 15px;
+            .btn-register {
                 margin-right: 40px;
-                width: 140px;
-                border-color: $color-primary;
-                background-color: $color-primary;
 
                 &:focus {
                     outline: none;
