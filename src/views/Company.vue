@@ -42,6 +42,7 @@
                 </p>
               </div>
             </div>
+            <Register />
           </b-col>
         </b-row>
       </b-container>
@@ -52,10 +53,12 @@
 <script>
 import PageHeader from "../components/Header/Header";
 import HeaderDescription from "../components/Header/HeaderDescription";
+import Register from "../components/Registration/Register";
 export default {
   components: {
     PageHeader,
-    HeaderDescription
+    HeaderDescription,
+    Register
   }
 };
 </script>

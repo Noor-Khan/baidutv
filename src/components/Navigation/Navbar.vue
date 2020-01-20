@@ -17,23 +17,27 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <primary-button text="Register" btnClass="register" />
+          <primary-button text="Register" btnClass="register" @click.native="registerModal()" />
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <registration-modal :modalShow="isVisibleModla" @hideModal="hideModal" />
   </header>
 </template>
 <script>
 import PrimaryButton from "../Buttons/Button";
+import RegistrationModal from "../Registration/Register";
 export default {
+  components: {
+    PrimaryButton,
+    RegistrationModal
+  },
   data() {
     return {
       navRoutes: null,
-      navBtn: true
+      navBtn: true,
+      isVisibleModla: false
     };
-  },
-  components: {
-    PrimaryButton
   },
   created() {
     this.navRoutes = this.$router.options.routes;
@@ -41,6 +45,12 @@ export default {
   methods: {
     navIconChange() {
       this.navBtn = !this.navBtn;
+    },
+    registerModal() {
+      this.isVisibleModla = !this.isVisibleModla;
+    },
+    hideModal(closeModal) {
+      this.isVisibleModla = closeModal;
     }
   }
 };
