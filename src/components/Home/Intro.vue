@@ -1,12 +1,10 @@
 <template>
   <section id="intro">
-    <Hooper :centerMode="true"
-        :wheelControl="false"
-        :mouseDrag="false">
+    <Hooper :centerMode="true" :wheelControl="false" :mouseDrag="false" :autoplay="true">
       <slide v-for="(slide, index) in slides" :key="index">
-        <b-container>
-          <b-row>
-            <b-col md="6" xs="12" sm="12">
+        <v-container>
+          <v-row>
+            <v-col md="6" xs="12" sm="12">
               <div class="intro-left">
                 <div class="intro-heading">
                   <h2>{{ slide.title }}</h2>
@@ -16,16 +14,16 @@
                   <primary-button text="Download" btnClass="white" />
                 </div>
               </div>
-            </b-col>
-            <b-col md="6" xs="12" sm="12">
+            </v-col>
+            <v-col md="6" xs="12" sm="12">
               <div class="intro-right">
                 <div class="intro-img">
                   <img src="../../assets/images/tablet2.png" alt="tablet" class="img-fluid" />
                 </div>
               </div>
-            </b-col>
-          </b-row>
-        </b-container>
+            </v-col>
+          </v-row>
+        </v-container>
       </slide>
       <hooper-pagination slot="hooper-addons"></hooper-pagination>
     </Hooper>

@@ -1,8 +1,8 @@
 <template>
   <section id="SafeVideos">
-    <b-container>
-      <b-row>
-        <b-col md="6">
+    <v-container>
+      <v-row>
+        <v-col md="6">
           <div class="safe-videos-heading">
             <h3>
               Ensure that children can
@@ -12,14 +12,18 @@
           <div class="safe-videos-btn">
             <primary-button text="Learn More" btnClass="white" />
           </div>
-        </b-col>
-        <b-col md="6">
+        </v-col>
+        <v-col md="6">
           <div class="safe-videos-img">
-            <img src="../../assets/images/safe-videos.png" alt="safe-videos" class="img-fluid" />
+            <img
+              src="../../assets/images/safe-videos.png"
+              alt="safe-videos"
+              class="img-fluid m-auto"
+            />
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

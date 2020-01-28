@@ -1,5 +1,23 @@
 <template>
-  <b-button :href="link" :class="`btn-${btnClass}`">{{ text }}</b-button>
+  <v-btn
+    v-if="btnClass === 'register'"
+    :href="link"
+    :color="btnClass"
+    :rounded="true"
+    class="px-12 py-6"
+    :class="`btn-${btnClass}`"
+    style="text-decoration:none;"
+  >{{ text }}</v-btn>
+  <v-btn
+    :disabled="disabled"
+    v-else
+    :href="link"
+    :color="btnClass"
+    :rounded="true"
+    class="px-12 py-7"
+    :class="`btn-${btnClass}`"
+    style="text-decoration:none;"
+  >{{ text }}</v-btn>
 </template>
 <script>
 export default {
@@ -15,71 +33,20 @@ export default {
     btnClass: {
       type: String,
       default: "#5733FF"
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.btn {
-  padding: 15px 30px;
-  border-radius: 40px;
-  font-size: 18px;
-  width: 200px;
-  color: #5733ff;
-  font-weight: 600;
-}
-.btn-primary {
-  background-color: #5733ff;
-  border-color: #5733ff;
-  color: #fff;
-  box-shadow: 1px 1px 7px #8873eb80;
-  &:hover {
-    background-color: transparent;
-    border-color: #5733ff;
-    color: #5733ff;
-  }
-  &:focus {
-    background-color: transparent;
-    border-color: #5733ff;
-    color: #5733ff;
-    box-shadow: none;
-  }
-}
 .btn-register {
-  padding: 10px 20px;
-  width: 155px;
-  font-size: 16px;
-  background-color: #5733ff;
-  border-color: #5733ff;
-  color: #fff;
+  width: 160px !important;
+  font-size: 16px !important;
+  background-color: #5733ff !important;
+  color: #fff !important;
   box-shadow: 1px 1px 7px #8873eb80;
-  &:hover {
-    background-color: transparent;
-    border-color: #5733ff;
-    color: #5733ff;
-  }
-  &:focus {
-    background-color: transparent;
-    border-color: #5733ff;
-    color: #5733ff;
-    box-shadow: none;
-  }
-}
-.btn-white {
-  background-color: #fff;
-  color: #5733ff;
-  border-color: #fff;
-  box-shadow: 1px 1px 7px #ffffff80;
-  &:hover {
-    background-color: transparent;
-    border-color: #fff;
-    color: #fff;
-  }
-  &:focus {
-    background-color: transparent;
-    border-color: #fff;
-    color: #fff;
-    box-shadow: none;
-  }
 }
 </style>

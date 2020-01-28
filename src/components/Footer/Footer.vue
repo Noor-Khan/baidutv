@@ -1,17 +1,17 @@
 <template>
   <footer id="footer">
-    <b-container>
-      <b-row>
-        <b-col>
+    <v-container>
+      <v-row>
+        <v-col>
           <div class="copyright-sentence">
             <p>
               Copyright &copy; 2019
               <a href="#">BAIDUTV</a>, All Rights Reserved
             </p>
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </footer>
 </template>
 <script>

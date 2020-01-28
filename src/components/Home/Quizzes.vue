@@ -1,13 +1,13 @@
 <template>
   <section id="quizzes">
-    <b-container>
-      <b-row>
-        <b-col md="6" xs="12">
+    <v-container>
+      <v-row>
+        <v-col md="6" xs="12">
           <div class="quize-img">
-            <img src="../../assets/images/quizzes.png" alt class="img-fluid" />
+            <v-img src="../../assets/images/quizzes.png" alt class="img-fluid w-75 m-auto" />
           </div>
-        </b-col>
-        <b-col md="6" xs="12">
+        </v-col>
+        <v-col md="6" xs="12" class="align-center">
           <div class="quize-heading">
             <h3>
               Inserts quick educational
@@ -18,9 +18,9 @@
           <div class="quize-btn">
             <primary-button text="Learn More" btnClass="primary" />
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

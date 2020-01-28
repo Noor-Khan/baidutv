@@ -1,13 +1,13 @@
 <template>
   <section id="ParentApp">
-    <b-container>
-      <b-row>
-        <b-col md="6">
-          <div class="pa-img text-center">
-            <img src="../../assets/images/parent-app-img.png" alt class="img-fluid" />
+    <v-container>
+      <v-row>
+        <v-col md="6">
+          <div class="pa-img text-right">
+            <v-img src="../../assets/images/parent-app-img.png" alt class="img-fluid w-75 m-auto" />
           </div>
-        </b-col>
-        <b-col md="6" class="text-left">
+        </v-col>
+        <v-col md="6" class="text-left">
           <div class="pa-heading">
             <h3 class="text-capitalize font-weight-bold">Parent Control App</h3>
           </div>
@@ -19,9 +19,9 @@
               being bugged all the time until they give in.
             </p>
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

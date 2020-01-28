@@ -1,13 +1,13 @@
 <template>
   <section id="TwoApps">
-    <b-container fluid>
-      <b-row>
-        <b-col md="6" class="p-0">
+    <v-container :fluid="true" style="max-width: 100%;">
+      <v-row>
+        <v-col md="6" class="p-0">
           <div class="baidu-tv-app">
             <div class="baidu-tv-heading">
               <h3 class="text-uppercase font-weight-bold">Download baidu tv</h3>
             </div>
-            <div class="baidu-tv-para">
+            <div class="baidu-tv-para pa-xs-0">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis fermentum neque arcu euismod mauris hendrerit cras.</p>
             </div>
             <div class="baidu-tv-img">
@@ -17,8 +17,8 @@
               <primary-button text="Download" btnClass="primary" />
             </div>
           </div>
-        </b-col>
-        <b-col md="6" class="p-0">
+        </v-col>
+        <v-col md="6" class="p-0">
           <div class="baidu-control-app">
             <div class="baidu-control-heading">
               <h3 class="text-uppercase font-weight-bold">Download baidu control</h3>
@@ -33,9 +33,9 @@
               <primary-button text="Download" btnClass="white" />
             </div>
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

@@ -6,9 +6,9 @@
       text="With Baidu control, you are in charge of thescreen time, and control the amount and types of videos your kids view. "
     />
     <section class="company-detail">
-      <b-container>
-        <b-row>
-          <b-col md="8" offset-md="2">
+      <v-container>
+        <v-row>
+          <v-col md="8" offset-md="2">
             <div class="who-we-are mt-5">
               <div class="company-heading">
                 <h4 class="font-weight-bold text-uppercase">Who we are</h4>
@@ -43,9 +43,9 @@
               </div>
             </div>
             <Register />
-          </b-col>
-        </b-row>
-      </b-container>
+          </v-col>
+        </v-row>
+      </v-container>
     </section>
   </div>
 </template>
@@ -53,12 +53,10 @@
 <script>
 import PageHeader from "../components/Header/Header";
 import HeaderDescription from "../components/Header/HeaderDescription";
-import Register from "../components/Registration/Register";
 export default {
   components: {
     PageHeader,
-    HeaderDescription,
-    Register
+    HeaderDescription
   }
 };
 </script>
