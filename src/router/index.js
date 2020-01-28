@@ -5,6 +5,7 @@ import Concept from "../views/Concept.vue";
 import Product from "../views/Product.vue";
 import Download from "../views/Download.vue";
 import Company from "../views/Company.vue";
+import Legal from "../views/Legal.vue";
 
 Vue.use(VueRouter);
 
@@ -32,6 +33,11 @@ const routes = [{
     path: "/company",
     name: "Company",
     component: Company
+  },
+  {
+    path: "/legal",
+    name: "Legal",
+    component: Legal
   }
 ];
 

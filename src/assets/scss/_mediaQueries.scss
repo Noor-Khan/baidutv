@@ -21,6 +21,10 @@
 }
 
 @media(max-width: 1023px) {
+  h3 {
+    font-size: 28px;
+    line-height: 38px;
+  }
 
   // Homepage SCSS for Ipad-pro
   #Home {
@@ -39,28 +43,45 @@
         }
       }
     }
-  }
-}
 
-#ScreenTime {
-  .screen-time-heading {
-    margin-top: -5rem;
+    #ScreenTime {
+      .screen-time-heading {
+        margin-top: -7rem;
+      }
+
+      .screen-time-img {
+        margin-top: -14rem;
+      }
+    }
+
+    #SafeVideos {
+      .safe-videos-heading {
+        margin-top: -2rem;
+      }
+    }
+
+    #quizzes {
+      .quize-heading {
+        margin-top: 0rem;
+      }
+    }
   }
 
-  .screen-time-img {
-    margin-top: -14rem;
-  }
-}
+  // Downloads page
+  #TwoApps {
+    .baidu-tv-app {
+      .baidu-tv-para {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
 
-#SafeVideos {
-  .safe-videos-heading {
-    margin-top: 1rem;
-  }
-}
-
-#quizzes {
-  .quize-heading {
-    margin-top: 2rem;
+    .baidu-control-app {
+      .baidu-control-para {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
   }
 }
 
@@ -81,6 +102,10 @@
       .screen-time-heading {
         margin-top: -3rem;
         text-align: center;
+      }
+
+      .screen-time-img {
+        margin-top: 0;
       }
 
       .screen-time-btn {
@@ -170,11 +195,36 @@
     }
   }
 
+  //Concept Page 
   #Concept {
     #PerfectExcuse {
       .row {
         flex-direction: column-reverse;
       }
+    }
+
+    #ControlScreenTime {
+      background-color: #f6f6f6;
+      background-image: unset;
+      height: auto;
+    }
+
+    #PerfectExcuse {
+      height: auto;
+    }
+
+    #SuperCharging {
+      background-color: #f6f6f6;
+      background-image: unset;
+      height: auto;
+    }
+  }
+
+  // Product Page
+  #Product {
+    #KiddApp {
+      background-color: #f6f6f6;
+      background-image: unset;
     }
   }
 }
@@ -200,7 +250,7 @@
         height: 720px;
 
         .hooper-pagination {
-          bottom: 8rem;
+          bottom: 5rem;
         }
       }
 

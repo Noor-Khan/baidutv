@@ -1,13 +1,13 @@
 <template>
   <section id="ControlScreenTime">
-    <b-container fluid>
-      <b-row>
-        <b-col md="4" class="mr-md-auto pl-0">
+    <v-container :fluid="true" style="max-width:100%;">
+      <v-row>
+        <v-col md="4" class="mr-md-auto pl-0">
           <div class="cst-img text-left">
-            <img src="../../assets/images/character1.png" alt class="img-fluid" />
+            <v-img src="../../assets/images/character1.png" alt class="img-fluid" />
           </div>
-        </b-col>
-        <b-col md="5" class="mr-md-auto text-left">
+        </v-col>
+        <v-col md="5" class="mr-md-auto text-left">
           <div class="cst-heading">
             <h3 class="text-capitalize font-weight-bold">Control Screen time</h3>
           </div>
@@ -19,9 +19,9 @@
               being bugged all the time until they give in.
             </p>
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

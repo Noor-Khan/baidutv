@@ -1,97 +1,130 @@
-header {
-    &#header {
-        position: fixed;
-        height: 65px;
-        width: 100%;
-        z-index: 9;
-        background-color: $color-white;
-        box-shadow: 0px 0px 8px #8080801a !important;
+#header {
+    position: fixed;
+    height: 65px;
+    width: 100%;
+    z-index: 9;
+    background-color: $color-white;
+    box-shadow: 0px 0px 8px #8080801a !important;
 
-        nav.navbar {
-            height: 65px;
+    nav {
+        .nav-list {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            height: 100%;
+            margin-bottom: 0;
 
-            .navbar-brand {
-                margin-left: 40px;
-            }
-
-            .navbar-toggler {
-                border: none;
-                padding: 0;
-
-                svg {
-                    font-size: 36px;
+            .nav-item {
+                a {
+                    padding: 20px 15px;
+                    color: $color-black;
+                    border-bottom: 2px solid transparent;
+                    transition-duration: 0.3s;
+                    text-decoration: none;
                 }
 
-                &:focus {
-                    outline: none;
-                    box-shadow: none;
-                }
-            }
+                .router-link-exact-active {
+                    color: $color-primary;
+                    border-bottom: 2px solid $color-primary;
 
-            .navbar-nav {
-                .nav-item {
-                    a {
-                        padding: 20px 15px;
-                        color: $color-black;
-                        border-bottom: 2px solid transparent;
-                        transition-duration: 0.3s;
-                        text-decoration: none;
-                    }
-
-                    .router-link-exact-active {
+                    &:hover {
                         color: $color-primary;
                         border-bottom: 2px solid $color-primary;
-
-                        &:hover {
-                            color: $color-primary;
-                            border-bottom: 2px solid $color-primary;
-                        }
-
                     }
                 }
             }
-
-            .btn-register {
-                margin-right: 40px;
-
-                &:focus {
-                    outline: none;
-                    box-shadow: none;
-                }
-            }
         }
     }
 }
 
-@media (max-width: 991px) {
-    header {
-        height: unset !important;
+// header {
+//     &#header {
 
-        .navbar {
-            padding: 0;
-            height: unset !important;
-            padding-top: 13px;
-            padding-bottom: 13px;
+//         nav.navbar {
+//             height: 65px;
 
-            .navbar-toggler {
-                margin-right: 40px;
-            }
+//             .navbar-brand {
+//                 margin-left: 40px;
+//             }
 
-            .navbar-collapse {
-                position: relative;
-                top: 13px;
-                padding: 0;
-                padding-bottom: 20px;
+//             .navbar-toggler {
+//                 border: none;
+//                 padding: 0;
 
-                .navbar-nav {
-                    margin-left: 0 !important;
-                }
+//                 svg {
+//                     font-size: 36px;
+//                 }
 
-                .register-btn {
-                    margin: 10px auto !important;
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
+//                 &:focus {
+//                     outline: none;
+//                     box-shadow: none;
+//                 }
+//             }
+
+//             .navbar-nav {
+//                 .nav-item {
+//                     a {
+//                         padding: 20px 15px;
+//                         color: $color-black;
+//                         border-bottom: 2px solid transparent;
+//                         transition-duration: 0.3s;
+//                         text-decoration: none;
+//                     }
+
+//                     .router-link-exact-active {
+//                         color: $color-primary;
+//                         border-bottom: 2px solid $color-primary;
+
+//                         &:hover {
+//                             color: $color-primary;
+//                             border-bottom: 2px solid $color-primary;
+//                         }
+
+//                     }
+//                 }
+//             }
+
+//             .btn-register {
+//                 margin-right: 40px;
+
+//                 &:focus {
+//                     outline: none;
+//                     box-shadow: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 991px) {
+//     header {
+//         height: unset !important;
+
+//         .navbar {
+//             padding: 0;
+//             height: unset !important;
+//             padding-top: 13px;
+//             padding-bottom: 13px;
+
+//             .navbar-toggler {
+//                 margin-right: 40px;
+//             }
+
+//             .navbar-collapse {
+//                 position: relative;
+//                 top: 13px;
+//                 padding: 0;
+//                 padding-bottom: 20px;
+
+//                 .navbar-nav {
+//                     margin-left: 0 !important;
+//                 }
+
+//                 .register-btn {
+//                     margin: 10px auto !important;
+//                     text-align: center;
+//                 }
+//             }
+//         }
+//     }
+// }

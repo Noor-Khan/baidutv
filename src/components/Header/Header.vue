@@ -1,14 +1,14 @@
 <template>
   <section id="PageHeader">
-    <b-container>
-      <b-row>
-        <b-col col="12">
+    <v-container>
+      <v-row>
+        <v-col col="12">
           <div class="header-heading">
             <h2>{{currentRouteName}}</h2>
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

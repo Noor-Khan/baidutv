@@ -1,10 +1,10 @@
 <template>
   <section id="PerfectExcuse">
-    <b-container fluid>
-      <b-row>
-        <b-col md="5" class="ml-md-auto text-left">
+    <v-container :fluid="true" style="max-width:100%;">
+      <v-row>
+        <v-col md="5" class="ml-md-auto text-left">
           <div class="pe-heading">
-            <h3 class="text-capitalize font-weight-bold">Control Screen time</h3>
+            <h3 class="text-capitalize font-weight-bold">A Perfect Excuse</h3>
           </div>
           <div class="pe-para">
             <p>
@@ -14,14 +14,14 @@
               being bugged all the time until they give in.
             </p>
           </div>
-        </b-col>
-        <b-col md="4" class="ml-md-auto pr-0">
+        </v-col>
+        <v-col md="4" class="ml-md-auto pr-0">
           <div class="pe-img text-right">
-            <img src="../../assets/images/character2.png" alt class="img-fluid" />
+            <v-img src="../../assets/images/character2.png" alt class="img-fluid" />
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

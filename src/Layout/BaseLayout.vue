@@ -1,11 +1,13 @@
 <template>
   <div>
     <navbar />
-    <div class="base-layout">
-      <router-view />
-      <Callout />
-      <Footer />
-    </div>
+    <v-content>
+      <div class="base-layout">
+        <router-view />
+        <Callout />
+        <Footer />
+      </div>
+    </v-content>
   </div>
 </template>
 <script>

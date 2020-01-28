@@ -1,13 +1,17 @@
 <template>
   <section id="ScreenTime">
-    <b-container>
-      <b-row>
-        <b-col md="6">
+    <v-container>
+      <v-row>
+        <v-col md="6">
           <div class="screen-time-img">
-            <img src="../../assets/images/baidu.png" alt="Baidu Screen Time" class="img-fluid" />
+            <v-img
+              src="../../assets/images/baidu.png"
+              alt="Baidu Screen Time"
+              class="img-fluid w-75 m-auto"
+            />
           </div>
-        </b-col>
-        <b-col md="6">
+        </v-col>
+        <v-col md="6">
           <div class="screen-time-heading">
             <h3>
               Limit the screen time
@@ -17,9 +21,9 @@
           <div class="screen-time-btn">
             <primary-button text="Learn More" btnClass="primary" />
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

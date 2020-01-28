@@ -1,29 +1,15 @@
-import Vue from "vue";
-import App from "./App.vue";
+import Vue from 'vue'
+import App from './App.vue'
+import vuetify from './plugins/vuetify';
 import router from "./router";
-import {
-  Button,
-  Steps,
-  Step
-} from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import Vuelidate from 'vuelidate'
 import './assets/scss/index.scss';
-import {
-  BootstrapVue,
-  IconsPlugin,
-  CarouselPlugin
-} from 'bootstrap-vue';
 
-Vue.component(Button.name, Button);
-Vue.component(Steps.name, Steps);
-Vue.component(Step.name, Step);
-Vue.use(BootstrapVue);
-Vue.use(CarouselPlugin);
-Vue.use(IconsPlugin);
-
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
+Vue.use(Vuelidate)
 
 new Vue({
+  vuetify,
   router,
   render: h => h(App)
-}).$mount("#app");
+}).$mount('#app')

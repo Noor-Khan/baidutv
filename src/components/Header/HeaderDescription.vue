@@ -1,13 +1,13 @@
 <template>
   <div id="HeaderDescription">
-    <b-container>
-      <b-row>
-        <b-col md="6" offset-md="3">
+    <v-container>
+      <v-row>
+        <v-col md="6" offset-md="3">
           <h3 class="font-weight-bolder text-uppercase">{{ heading }}</h3>
           <p>{{text}}</p>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 <script>

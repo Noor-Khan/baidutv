@@ -1,8 +1,8 @@
 <template>
   <section id="KiddApp">
-    <b-container>
-      <b-row>
-        <b-col md="6" class="text-left">
+    <v-container>
+      <v-row>
+        <v-col md="6" class="text-left">
           <div class="ka-heading">
             <h3 class="text-capitalize font-weight-bold">Kidd App</h3>
           </div>
@@ -14,14 +14,14 @@
               being bugged all the time until they give in.
             </p>
           </div>
-        </b-col>
-        <b-col md="6">
+        </v-col>
+        <v-col md="6">
           <div class="ka-img text-center">
-            <img src="../../assets/images/kidd-app-img.png" alt class="img-fluid w-50" />
+            <v-img src="../../assets/images/kidd-app-img.png" alt class="img-fluid w-75 m-auto" />
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>

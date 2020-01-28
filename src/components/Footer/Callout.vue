@@ -1,17 +1,17 @@
 <template>
   <section id="callout">
-    <b-container>
-      <b-row>
-        <b-col>
+    <v-container>
+      <v-row>
+        <v-col>
           <div class="callout-heading">
             <h2>Let's get started</h2>
           </div>
           <div class="callout-btn">
             <primary-button text="Register" btnClass="white" />
           </div>
-        </b-col>
-      </b-row>
-    </b-container>
+        </v-col>
+      </v-row>
+    </v-container>
   </section>
 </template>
 <script>
