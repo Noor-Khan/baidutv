@@ -1,19 +1,46 @@
 <template>
-  <header id="header">
-    <nav>
-      <v-toolbar>
-        <v-toolbar-title>BaiduTV</v-toolbar-title>
-        <ul class="nav-list">
-          <li v-for="(route, index) in navRoutes" :key="index" class="nav-item">
-            <router-link :to="route.path" v-if="route.name !== 'Legal'">{{route.name}}</router-link>
-          </li>
-        </ul>
-        <v-spacer></v-spacer>
-        <primary-button text="Register" btnClass="register" @click.native="registerModal()" />
-      </v-toolbar>
-    </nav>
+  <div id="header">
+    <v-toolbar>
+      <v-toolbar-title>BaiduTV</v-toolbar-title>
+      <ul class="nav-list hidden-sm-and-down ml-5">
+        <li v-for="(route, index) in navRoutes" :key="index" class="nav-item">
+          <router-link :to="route.path" v-if="route.name !== 'Legal'">{{route.name}}</router-link>
+        </li>
+      </ul>
+      <v-spacer></v-spacer>
+      <primary-button
+        class="nav-list hidden-sm-and-down"
+        text="Register"
+        btnClass="register"
+        @click.native="registerModal()"
+      />
+      <v-dialog v-model="mobMenu" fullscreen hide-overlay transition="dialog-bottom-transition">
+        <template v-slot:activator="{ on }">
+          <v-btn text color="primary" v-on="on" class="hidden-sm-and-up p0">
+            <v-icon>mdi-home</v-icon>
+          </v-btn>
+        </template>
+        <v-card>
+          <v-toolbar dark color="primary">
+            <v-btn icon dark @click="mobMenu = false">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
+          </v-toolbar>
+          <ul class="nav-list">
+            <v-list-item v-for="(route, index) in navRoutes" :key="index" class="nav-item">
+              <v-list-item-content>
+                <v-list-item-title>
+                  <router-link :to="route.path" v-if="route.name !== 'Legal'">{{route.name}}</router-link>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </ul>
+        </v-card>
+      </v-dialog>
+    </v-toolbar>
     <registration-modal :modalShow="isVisibleModal" @closeModal="hideModal" />
-  </header>
+  </div>
 </template>
 <script>
 import PrimaryButton from "../Buttons/Button";
@@ -27,7 +54,8 @@ export default {
     return {
       navRoutes: null,
       navBtn: true,
-      isVisibleModal: false
+      isVisibleModal: false,
+      mobMenu: false
     };
   },
   created() {
