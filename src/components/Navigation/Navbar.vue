@@ -17,11 +17,11 @@
       <v-dialog v-model="mobMenu" fullscreen hide-overlay transition="dialog-bottom-transition">
         <template v-slot:activator="{ on }">
           <v-btn text color="primary" v-on="on" class="hidden-sm-and-up p0">
-            <v-icon>mdi-home</v-icon>
+            <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
         <v-card>
-          <v-toolbar dark color="primary">
+          <v-toolbar dark color="primary" style="border-radius: 0;">
             <v-btn icon dark @click="mobMenu = false">
               <v-icon>mdi-close</v-icon>
             </v-btn>
@@ -31,7 +31,11 @@
             <v-list-item v-for="(route, index) in navRoutes" :key="index" class="nav-item">
               <v-list-item-content>
                 <v-list-item-title>
-                  <router-link :to="route.path" v-if="route.name !== 'Legal'">{{route.name}}</router-link>
+                  <router-link
+                    to
+                    v-if="route.name !== 'Legal'"
+                    @click.native="navigate(route.path)"
+                  >{{route.name}}</router-link>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -70,6 +74,10 @@ export default {
     },
     hideModal(closeModal) {
       this.isVisibleModal = closeModal;
+    },
+    navigate(path) {
+      this.$router.push({ path: path });
+      this.mobMenu = false;
     }
   }
 };
