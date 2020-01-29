@@ -42,7 +42,6 @@
                 </p>
               </div>
             </div>
-            <Register />
           </v-col>
         </v-row>
       </v-container>
