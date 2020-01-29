@@ -1,45 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Concept from "../views/Concept.vue";
-import Product from "../views/Product.vue";
-import Download from "../views/Download.vue";
-import Company from "../views/Company.vue";
-import Legal from "../views/Legal.vue";
 
 Vue.use(VueRouter);
 
 const routes = [{
-    path: "/",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/concept",
-    name: "Concept",
-    component: Concept
-  },
-  {
-    path: "/product",
-    name: "Product",
-    component: Product
-  },
-  {
-    path: "/download",
-    name: "Download",
-    component: Download
-  },
-  {
-    path: "/company",
-    name: "Company",
-    component: Company
-  },
-  {
-    path: "/legal",
-    name: "Legal",
-    component: Legal
-  }
-];
+  path: "/",
+  name: "home",
+  component: Home
+}];
 
 const router = new VueRouter({
   mode: "history",

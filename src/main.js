@@ -1,15 +1,17 @@
-import Vue from 'vue'
-import App from './App.vue'
-import vuetify from './plugins/vuetify';
+import Vue from "vue";
+import App from "./App.vue";
 import router from "./router";
-import Vuelidate from 'vuelidate'
-import './assets/scss/index.scss';
+import './assets/scss/index.scss'
+import {
+  BootstrapVue,
+  IconsPlugin
+} from 'bootstrap-vue'
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
-Vue.config.productionTip = false
-Vue.use(Vuelidate)
+Vue.config.productionTip = false;
 
 new Vue({
-  vuetify,
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
