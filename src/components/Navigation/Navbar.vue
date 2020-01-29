@@ -27,7 +27,7 @@
             </v-btn>
             <v-spacer></v-spacer>
           </v-toolbar>
-          <ul class="nav-list">
+          <ul class="nav-list pl-0">
             <v-list-item v-for="(route, index) in navRoutes" :key="index" class="nav-item">
               <v-list-item-content>
                 <v-list-item-title>
