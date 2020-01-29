@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+
 // Bootstrap SCSS files
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
-// Global Variables
-@import './variables';
+// Global
+@import './_variables';
+@import './_global';
+@import './_mediaQueries';
+@import './_hooper';
+@import './_formValidation';
 
 // Global Component
 @import './navbar';

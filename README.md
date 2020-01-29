@@ -1,4 +1,4 @@
-# baidutv
+# baidu2
 
 ## Project setup
 ```

@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <base-layout />
-  </div>
+  <v-app>
+    <div id="app">
+      <base-layout />
+    </div>
+  </v-app>
 </template>
 <script>
 import baseLayout from "./Layout/BaseLayout";
@@ -13,8 +15,11 @@ export default {
 </script>
 
 <style lang="scss">
+.theme--light.v-application {
+  background-color: #fff !important;
+}
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
