@@ -28,7 +28,7 @@ export default {
     },
     link: {
       type: String,
-      default: "#"
+      default: "##"
     },
     btnClass: {
       type: String,

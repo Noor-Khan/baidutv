@@ -17,7 +17,11 @@
           </v-stepper-header>
           <v-stepper-items>
             <v-stepper-content step="1">
-              <step-one @nextStep="nextStep" @closeModal="$emit('closeModal', false)"></step-one>
+              <step-one
+                @nextStep="nextStep"
+                @closeModal="$emit('closeModal', false)"
+                :mobView="mobView"
+              ></step-one>
             </v-stepper-content>
             <v-stepper-content step="2">
               <step-two

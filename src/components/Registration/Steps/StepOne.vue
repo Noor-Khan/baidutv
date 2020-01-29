@@ -1,7 +1,7 @@
 <template>
   <v-form ref="form" v-model="valid" :lazy-validation="lazy">
     <v-row>
-      <v-col cols="8" offset-md="2">
+      <v-col cols="12" md="8" offset-md="2">
         <v-text-field
           label="Email Address"
           hide-details="auto"
@@ -10,7 +10,9 @@
           required
         ></v-text-field>
       </v-col>
-      <v-col cols="8" offset-md="2">
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="8" offset-md="2" sm="12">
         <v-text-field
           label="Password"
           hide-details="auto"
@@ -20,7 +22,9 @@
           required
         ></v-text-field>
       </v-col>
-      <v-col cols="8" offset-md="2">
+    </v-row>
+    <v-row>
+      <v-col cols="auto" md="8" offset-md="2">
         <v-text-field
           label="Confirm Password"
           hide-details="auto"
@@ -45,6 +49,8 @@
           </v-checkbox>
         </div>
       </v-col>
+    </v-row>
+    <v-row>
       <v-col cols="12">
         <primary-button text="Register" @click.native="validate" btnClass="primary"></primary-button>
         <v-btn text @click="reset()">Close</v-btn>

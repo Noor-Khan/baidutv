@@ -2,7 +2,7 @@
   <div class="kid-details">
     <v-form ref="form" v-model="valid">
       <v-row>
-        <v-col cols="6">
+        <v-col cols="12" md="6">
           <v-text-field
             label="Parent's Name"
             v-model="parentName"
@@ -10,7 +10,7 @@
             hide-details="auto"
           ></v-text-field>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="12" md="6">
           <v-text-field
             label="Kid's Name"
             v-model="kidsArr[0].kidName"
@@ -20,7 +20,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6">
+        <v-col cols="12" md="6">
           <v-select
             v-model="kidsArr[0].kidAge"
             :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
@@ -28,7 +28,7 @@
             label="Age"
           ></v-select>
         </v-col>
-        <v-col cols="6" class="text-left">
+        <v-col cols="12" md="6" class="text-left">
           <v-radio-group
             v-model="kidsArr[0].kidGender"
             row
@@ -60,19 +60,19 @@
       <div v-for="(n, index) in kidsArr" :key="index">
         <div v-if="index !== 0">
           <v-row v-if="moreKids">
-            <v-col cols="4">
+            <v-col cols="12" md="4">
               <v-text-field label="Kid's Name" v-model.trim="n.kidName"></v-text-field>
             </v-col>
-            <v-col cols="2">
+            <v-col cols="12" md="4">
               <v-select label="Age" :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" v-model="n.kidAge"></v-select>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="12" md="4">
               <v-radio-group v-model="n.kidGender" row class="mt-5">
                 <v-radio label="Boy" value="Boy" color="primary"></v-radio>
                 <v-radio label="Girl" value="Girl" color="primary"></v-radio>
               </v-radio-group>
             </v-col>
-            <v-col cols="2" class="text-left d-flex align-center">
+            <v-col cols="12" md="4" class="text-left d-flex align-center">
               <v-btn small @click="addKid()">
                 more
                 <v-icon>mdi-plus</v-icon>

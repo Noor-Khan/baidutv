@@ -39,6 +39,12 @@
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <primary-button
+              class="nav-list hidden-sm-and-up"
+              text="Register"
+              btnClass="register"
+              @click.native="registerModal()"
+            />
           </ul>
         </v-card>
       </v-dialog>

@@ -7,18 +7,34 @@
             <h2>Let's get started</h2>
           </div>
           <div class="callout-btn">
-            <primary-button text="Register" btnClass="white" />
+            <primary-button text="Register" btnClass="white" @click.native="registerModal()" />
           </div>
         </v-col>
       </v-row>
     </v-container>
+    <registration-modal :modalShow="isVisibleModal" @closeModal="hideModal" />
   </section>
 </template>
 <script>
 import primaryButton from "../Buttons/Button";
+import RegistrationModal from "../Registration/RegisterModal";
 export default {
   components: {
-    primaryButton
+    primaryButton,
+    RegistrationModal
+  },
+  data() {
+    return {
+      isVisibleModal: false
+    };
+  },
+  methods: {
+    registerModal() {
+      this.isVisibleModal = !this.isVisibleModal;
+    },
+    hideModal(closeModal) {
+      this.isVisibleModal = closeModal;
+    }
   }
 };
 </script>

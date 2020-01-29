@@ -96,6 +96,25 @@
     line-height: 38px;
   }
 
+  // Registration Modal 
+  .registration-modal {
+    .v-dialog {
+      margin: 10px;
+
+      .v-stepper {
+        .v-stepper__items {
+          .v-stepper__content {
+            padding: 24px 10px 16px 10px;
+
+            .v-stepper__wrapper {
+              padding: 2rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
   // Homepage SCSS for Ipad
   #Home {
     #ScreenTime {

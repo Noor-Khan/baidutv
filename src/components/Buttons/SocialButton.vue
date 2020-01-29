@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn
-      v-if="btnClass === 'facebook'"
+      v-if="btnClass === 'facebook' && !mobView"
       :href="link"
       :color="btnClass"
       :class="`social-btn btn-${btnClass} justify-start`"
@@ -27,7 +27,8 @@ export default {
   props: {
     btnClass: String,
     text: String,
-    link: String
+    link: String,
+    mobView: Boolean
   }
 };
 </script>
@@ -38,6 +39,9 @@ export default {
   padding: 15px !important;
   margin-top: 10px;
   margin-bottom: 10px;
+  &.mobView {
+    width: 100px !important;
+  }
   .v-icon {
     font-size: 32px;
     color: #5733ff !important;
