@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="registration-modal text-center">
     <v-dialog v-model="regModalShow" width="750" style="border-radius: 15px;">
       <v-card>
         <v-stepper v-model="initial">
@@ -58,11 +58,9 @@
   </div>
 </template>
 <script>
-// import { required, minLength, email, sameAs } from "vuelidate/lib/validators";
 import StepOne from "./Steps/StepOne";
 import StepTwo from "./Steps/StepTwo";
 import StepThree from "./Steps/StepThree";
-// import PrimaryButton from "../Buttons/Button";
 
 export default {
   props: {
@@ -72,7 +70,6 @@ export default {
     StepOne,
     StepTwo,
     StepThree
-    // PrimaryButton
   },
   computed: {
     regModalShow: {
