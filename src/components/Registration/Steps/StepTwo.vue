@@ -61,18 +61,32 @@
         <div v-if="index !== 0">
           <v-row v-if="moreKids">
             <v-col cols="12" md="4">
-              <v-text-field label="Kid's Name" v-model.trim="n.kidName"></v-text-field>
+              <v-text-field
+                label="Kid's Name"
+                v-model.trim="n.kidName"
+                :rules="[v => !!v || 'Field is required']"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="12" md="2">
+              <v-select
+                label="Age"
+                :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+                v-model="n.kidAge"
+                :rules="[v => !!v || 'Field is required']"
+              ></v-select>
             </v-col>
             <v-col cols="12" md="4">
-              <v-select label="Age" :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" v-model="n.kidAge"></v-select>
-            </v-col>
-            <v-col cols="12" md="4">
-              <v-radio-group v-model="n.kidGender" row class="mt-5">
+              <v-radio-group
+                v-model="n.kidGender"
+                row
+                class="mt-5"
+                :rules="[v => !!v || 'Field is required']"
+              >
                 <v-radio label="Boy" value="Boy" color="primary"></v-radio>
                 <v-radio label="Girl" value="Girl" color="primary"></v-radio>
               </v-radio-group>
             </v-col>
-            <v-col cols="12" md="4" class="text-left d-flex align-center">
+            <v-col cols="12" md="2" class="text-left d-flex align-center">
               <v-btn small @click="addKid()">
                 more
                 <v-icon>mdi-plus</v-icon>
