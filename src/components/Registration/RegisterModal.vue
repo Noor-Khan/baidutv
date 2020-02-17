@@ -17,22 +17,18 @@
           </v-stepper-header>
           <v-stepper-items>
             <v-stepper-content step="1">
-              <step-one
-                @nextStep="nextStep"
-                @closeModal="$emit('closeModal', false)"
-                :mobView="mobView"
-              ></step-one>
+              <step-one :nextStep="nextStep" @closeModal="$emit('closeModal', false)"></step-one>
             </v-stepper-content>
             <v-stepper-content step="2">
               <step-two
-                @nextStep="nextStep"
+                :nextStep="nextStep"
                 @kidsList="updateKidList"
                 @closeModal="$emit('closeModal', false)"
               ></step-two>
             </v-stepper-content>
             <v-stepper-content step="3">
               <step-three
-                @nextStep="nextStep"
+                :nextStep="nextStep"
                 :newKidList="updateKidListData"
                 @closeModal="$emit('closeModal', false)"
               ></step-three>

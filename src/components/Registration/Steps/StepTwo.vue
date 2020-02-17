@@ -5,7 +5,7 @@
         <v-col cols="12" md="6">
           <v-text-field
             label="Parent's Name"
-            v-model="parentName"
+            v-model="parent_name"
             :rules="parentNameRules"
             hide-details="auto"
           ></v-text-field>
@@ -13,7 +13,7 @@
         <v-col cols="12" md="6">
           <v-text-field
             label="Kid's Name"
-            v-model="kidsArr[0].kidName"
+            v-model="kidsArr[0].kid_name"
             :rules="kidNameRules"
             hide-details="auto"
           ></v-text-field>
@@ -22,7 +22,7 @@
       <v-row>
         <v-col cols="12" md="6">
           <v-select
-            v-model="kidsArr[0].kidAge"
+            v-model="kidsArr[0].age"
             :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
             :rules="[v => !!v || 'Age is required']"
             label="Age"
@@ -30,7 +30,7 @@
         </v-col>
         <v-col cols="12" md="6" class="text-left">
           <v-radio-group
-            v-model="kidsArr[0].kidGender"
+            v-model="kidsArr[0].gender"
             row
             class="mt-5"
             :rules="[v => !!v || 'Field is required']"
@@ -49,7 +49,7 @@
           <div class="more-kids">
             <v-checkbox
               v-model="moreKids"
-              @change.once="addKid"
+              @change="addKid"
               class="mx-2 mt-0"
               color="primary"
               label="I have more kids."
@@ -63,7 +63,7 @@
             <v-col cols="12" md="4">
               <v-text-field
                 label="Kid's Name"
-                v-model.trim="n.kidName"
+                v-model.trim="n.kid_name"
                 :rules="[v => !!v || 'Field is required']"
               ></v-text-field>
             </v-col>
@@ -71,13 +71,13 @@
               <v-select
                 label="Age"
                 :items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-                v-model="n.kidAge"
+                v-model="n.age"
                 :rules="[v => !!v || 'Field is required']"
               ></v-select>
             </v-col>
             <v-col cols="12" md="4">
               <v-radio-group
-                v-model="n.kidGender"
+                v-model="n.gender"
                 row
                 class="mt-5"
                 :rules="[v => !!v || 'Field is required']"
@@ -87,7 +87,7 @@
               </v-radio-group>
             </v-col>
             <v-col cols="12" md="2" class="text-left d-flex align-center">
-              <v-btn small @click="addKid()">
+              <v-btn small @click="addKid()" v-if="index = index">
                 more
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
@@ -111,57 +111,54 @@
 <script>
 import PrimaryButton from "../../Buttons/Button";
 export default {
-  props: {},
+  props: {
+    nextStep: {
+      type: Function,
+      required: true
+    }
+  },
   components: {
     PrimaryButton
   },
   data() {
     return {
-      parentName: "",
-      kidName: "",
+      parent_name: "",
       valid: true,
-      kidAge: "",
-      kidGender: null,
-      parentNameRules: [
-        v => !!v || "Field is required",
-        v => (v && v.length >= 4) || "Password must have 5+ characters"
-      ],
-      kidNameRules: [
-        v => !!v || "Field is required",
-        v => (v && v.length >= 4) || "Password must have 5+ characters"
-      ],
+      parentNameRules: [v => !!v || "Field is required"],
+      kidNameRules: [v => !!v || "Field is required"],
       kids: 1,
       moreKidSnackbar: false,
       moreKids: false,
-      firstChild: null,
-      submitStatus: null,
-      secondChild: null,
       kidsArr: [
         {
-          kidName: "",
-          kidAge: "",
-          kidGender: "",
-          kidInterest: ""
+          kid_name: "",
+          age: "",
+          gender: "",
+          interest: ""
         }
       ]
     };
   },
   methods: {
     addKid() {
-      if (this.kids <= 3) {
-        this.kidsArr = [
-          ...this.kidsArr,
-          { kidName: "", kidAge: "", kidGender: "" }
-        ];
-        this.kids = this.kids + 1;
-      } else {
+      if (this.kids <= 3 && this.moreKids == true) {
+        this.kidsArr = [...this.kidsArr, { kid_name: "", age: "", gender: "" }];
+        this.kids += 1;
+      } else if (this.moreKids == false) {
+        this.kidsArr.splice(1);
+        this.kids = 1;
+      } else if (this.kids > 3) {
         this.moreKidSnackbar = true;
       }
+      console.log(this.moreKids);
     },
     validate() {
       if (this.$refs.form.validate()) {
-        this.$emit("nextStep", 2);
-        this.$emit("kidsList", this.kidsArr);
+        this.nextStep(2);
+        this.$emit("kidsList", {
+          parent_name: this.parent_name,
+          kid_arr: this.kidsArr
+        });
       }
     },
     reset() {

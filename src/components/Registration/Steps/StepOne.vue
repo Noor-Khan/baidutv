@@ -16,6 +16,10 @@
       <v-col cols="12">
         <primary-button text="Register" @click.native="validate" btnClass="primary"></primary-button>
         <v-btn text @click="reset()">Close</v-btn>
+        <v-snackbar v-model="authErr" top color="primary">
+          We are Sorry!! Email is already exist
+          <v-btn color="white" text @click="authErr = false">Close</v-btn>
+        </v-snackbar>
         <div class="mt-5">
           <h5 class="text-uppercase">or</h5>
           <social-button text="Continue with Facebook" btnClass="facebook"></social-button>
@@ -26,10 +30,16 @@
   </v-form>
 </template>
 <script>
+import axios from "axios";
 import SocialButton from "../../Buttons/SocialButton";
 import PrimaryButton from "../../Buttons/Button";
 export default {
-  props: {},
+  props: {
+    nextStep: {
+      type: Function,
+      required: true
+    }
+  },
   components: {
     SocialButton,
     PrimaryButton
@@ -38,7 +48,7 @@ export default {
     return {
       step: 1,
       valid: true,
-      snackbar: false,
+      authErr: false,
       lazy: false,
       email: "",
       terms: null,
@@ -51,7 +61,16 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.$emit("nextStep", 1);
+        axios
+          .post("http://localhost:9000/register", { email: this.email })
+          .then(response => {
+            console.log(response);
+            this.nextStep(1);
+          })
+          .catch(err => {
+            console.log(err.message);
+            this.authErr = true;
+          });
       }
     },
     reset() {

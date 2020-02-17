@@ -1,17 +1,17 @@
 <template>
   <v-form ref="form" v-model="valid">
-    <v-row v-for="(kid, index) in newKidArr" :key="index">
+    <v-row v-for="(kid, index) in myKidList" :key="index">
       <v-col cols="12" md="6">
         <v-text-field
           label="Kid's Name"
-          v-model="kid.kidName"
+          v-model="kid.kid_name"
           :rules="[v => !!v || 'Field is required']"
           hide-details="auto"
         ></v-text-field>
       </v-col>
       <v-col cols="12" md="6">
         <v-select
-          v-model="kid.kidInterest"
+          v-model="kid.interest"
           :rules="[v => !!v || 'Field is required']"
           :items="['Watching Videos', 'Video Games', 'Cartoons', 'Movies']"
           label="Select Interests"
@@ -27,34 +27,51 @@
   </v-form>
 </template>
 <script>
+import axios from "axios";
 import PrimaryButton from "../../Buttons/Button";
 export default {
-  props: ["newKidList"],
+  props: {
+    newKidList: {
+      required: false,
+      default: null
+    },
+    nextStep: {
+      type: Function,
+      required: true
+    }
+  },
   components: {
     PrimaryButton
+  },
+  computed: {
+    myKidList() {
+      return this.newKidList.kid_arr;
+    }
   },
   data() {
     return {
       kidName: "",
       kidInterest: "",
-      valid: true,
-      newKidArr: null
+      valid: true
     };
   },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.$emit("nextStep", 3);
+        axios
+          .post("http://localhost:9000/kid", this.newKidList)
+          .then(response => {
+            console.log(response);
+            this.nextStep(3);
+          })
+          .catch(err => {
+            console.log(err.message);
+          });
       }
-    }
-  },
-  reset() {
-    this.$emit("closeModal", false);
-    this.$refs.form.reset();
-  },
-  watch: {
-    newKidList: function() {
-      this.newKidArr = this.newKidList;
+    },
+    reset() {
+      this.$emit("closeModal", false);
+      this.$refs.form.reset();
     }
   }
 };
