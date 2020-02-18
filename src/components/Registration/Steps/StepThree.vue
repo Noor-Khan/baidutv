@@ -45,7 +45,9 @@ export default {
   },
   computed: {
     myKidList() {
-      return this.newKidList.kid_arr;
+      return this.newKidList && this.newKidList.kid_arr
+        ? this.newKidList.kid_arr
+        : [];
     }
   },
   data() {

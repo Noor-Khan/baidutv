@@ -17,7 +17,7 @@
         <primary-button text="Register" @click.native="validate" btnClass="primary"></primary-button>
         <v-btn text @click="reset()">Close</v-btn>
         <v-snackbar v-model="authErr" top color="primary">
-          We are Sorry!! Email is already exist
+          {{errorMessage}}
           <v-btn color="white" text @click="authErr = false">Close</v-btn>
         </v-snackbar>
         <div class="mt-5">
@@ -46,6 +46,7 @@ export default {
   },
   data() {
     return {
+      errorMessage: "",
       step: 1,
       valid: true,
       authErr: false,
@@ -70,6 +71,7 @@ export default {
           .catch(err => {
             console.log(err.message);
             this.authErr = true;
+            this.errorMessage = err.message;
           });
       }
     },
