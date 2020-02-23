@@ -49,6 +49,10 @@
             </v-stepper-content>
           </v-stepper-items>
         </v-stepper>
+        <v-snackbar v-model="authDialog" top color="primary">
+          Your have successfully registered with {{successMessage}} email.
+          <v-btn color="white" text @click="authDialog = false">Close</v-btn>
+        </v-snackbar>
       </v-card>
     </v-dialog>
   </div>
@@ -80,6 +84,8 @@ export default {
   data() {
     return {
       initial: 1,
+      authDialog: false,
+      successMessage: "",
       valid: true,
       updateKidListData: null,
       snackbar: false,
@@ -107,7 +113,13 @@ export default {
       if (step === this.steps.length) {
         alert("thanks for registering your kid!!");
       } else {
-        this.initial = step + 1;
+        step.successRegister
+          ? ((this.initial = step.step + 1),
+            (this.successMessage = step.successRegister),
+            (this.authDialog = true))
+          : (this.initial = step + 1);
+        // this.initial = step + 1;
+        console.log(step.successRegister);
       }
     }
   }
