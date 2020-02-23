@@ -136,7 +136,6 @@ export default {
       that.isSignIn = that.$gAuth.isAuthorized;
       if (that.isInit) clearInterval(checkGauthLoad);
     }, 1000);
-    this.getUserData();
   }
 };
 </script>
