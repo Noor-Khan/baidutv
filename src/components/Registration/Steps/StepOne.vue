@@ -22,23 +22,18 @@
         </v-snackbar>
         <div class="mt-5">
           <h5 class="text-uppercase">or</h5>
-          <social-button
-            text="Continue with Facebook"
-            @click.native="handleClickSignInFb()"
-            btnClass="facebook"
-          ></social-button>
+          <facebook-login
+            class="facebook-btn"
+            loginLabel="Continue with Facebook"
+            appId="392844361649439"
+            @login="getUserData"
+            @get-initial-status="getUserData"
+          ></facebook-login>
           <social-button
             text="Continue with Google"
             @click.native="handleClickSignIn()"
             btnClass="google"
           ></social-button>
-          <facebook-login
-            class="button"
-            appId="392844361649439"
-            @login="getUserData"
-            @get-initial-status="getUserData"
-          ></facebook-login>
-          <!-- <button @click="authenticate('facebook')">auth Facebook</button> -->
         </div>
       </v-col>
     </v-row>
@@ -85,10 +80,15 @@ export default {
             authResponse
           })
           .then(response => {
+            this.successMessage = dude.name;
+            this.nextStep({ step: 1, successRegister: this.successMessage });
             console.log(response);
+            console.log(dude);
           })
           .catch(err => {
             console.log(err);
+            this.errorMessage = err.message;
+            this.authDialog = true;
           });
       });
     },
@@ -103,10 +103,10 @@ export default {
         .then(response => {
           this.successMessage = response.data.result.user.email;
           this.nextStep({ step: 1, successRegister: this.successMessage });
-          this.authDialog = true;
         })
-        .catch(error => {
-          console.log({ error });
+        .catch(err => {
+          this.errorMessage = err.message;
+          this.authDialog = true;
         });
     },
     validate() {
@@ -136,8 +136,44 @@ export default {
       that.isSignIn = that.$gAuth.isAuthorized;
       if (that.isInit) clearInterval(checkGauthLoad);
     }, 1000);
+    this.getUserData();
   }
 };
 </script>
 <style lang="scss">
+.facebook-btn {
+  padding: 0 !important;
+  button {
+    background: #f5f5f5 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    text-transform: uppercase;
+    font-size: 0.875rem !important;
+    border-radius: 4px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    font-weight: 500;
+    letter-spacing: 0.0892857143em;
+    width: 300px;
+    height: unset;
+    padding: 10px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    img {
+      position: absolute;
+      left: 10px;
+      background: #5733ff !important;
+      top: 14px;
+      padding: 3px;
+      width: 25px;
+      border-radius: 50%;
+    }
+    .spinner {
+      height: 30px !important;
+    }
+  }
+}
 </style>

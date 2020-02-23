@@ -50,7 +50,7 @@
           </v-stepper-items>
         </v-stepper>
         <v-snackbar v-model="authDialog" top color="primary">
-          Your have successfully registered with {{successMessage}} email.
+          Your have successfully registered with {{successMessage}}.
           <v-btn color="white" text @click="authDialog = false">Close</v-btn>
         </v-snackbar>
       </v-card>
