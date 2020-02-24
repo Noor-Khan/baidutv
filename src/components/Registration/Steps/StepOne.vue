@@ -81,17 +81,13 @@ export default {
               response
             })
             .then(backendResponse => {
-              console.log(that);
-              this.successMessage = response.name;
+              this.successMessage = backendResponse.data.user.name;
               that.nextStep({
                 step: 1,
                 successRegister: this.successMessage
               });
-              console.log(backendResponse);
-              console.log(response);
             })
             .catch(err => {
-              console.log(err);
               this.errorMessage = err.message;
               this.authDialog = true;
             });
@@ -121,11 +117,10 @@ export default {
         axios
           .post("http://localhost:9000/auth/register", { email: this.email })
           .then(response => {
-            console.log(response);
-            this.nextStep(1);
+            this.successMessage = response.data.user.email;
+            this.nextStep({ step: 1, successRegister: this.successMessage });
           })
           .catch(err => {
-            console.log(err.message);
             this.authDialog = true;
             this.errorMessage = err.message;
           });

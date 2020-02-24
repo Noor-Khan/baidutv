@@ -150,7 +150,6 @@ export default {
       } else if (this.kids > 3) {
         this.moreKidSnackbar = true;
       }
-      console.log(this.moreKids);
     },
     validate() {
       if (this.$refs.form.validate()) {

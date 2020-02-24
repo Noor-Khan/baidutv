@@ -118,8 +118,6 @@ export default {
             (this.successMessage = step.successRegister),
             (this.authDialog = true))
           : (this.initial = step + 1);
-        // this.initial = step + 1;
-        console.log(step.successRegister);
       }
     }
   }

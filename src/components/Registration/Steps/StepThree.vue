@@ -60,15 +60,9 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        axios
-          .post("http://localhost:9000/kid", this.newKidList)
-          .then(response => {
-            console.log(response);
-            this.nextStep(3);
-          })
-          .catch(err => {
-            console.log(err.message);
-          });
+        axios.post("http://localhost:9000/kid", this.newKidList).then(() => {
+          this.nextStep(3);
+        });
       }
     },
     reset() {
