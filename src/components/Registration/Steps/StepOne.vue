@@ -72,27 +72,34 @@ export default {
     };
   },
   methods: {
-    getUserData({ FB, authResponse }) {
-      FB.api("/me", dude => {
-        axios
-          .post("http://localhost:9000/auth/facebook-auth", {
-            dude,
-            authResponse
-          })
-          .then(response => {
-            this.successMessage = dude.name;
-            this.nextStep({ step: 1, successRegister: this.successMessage });
-            console.log(response);
-            console.log(dude);
-          })
-          .catch(err => {
-            console.log(err);
-            this.errorMessage = err.message;
-            this.authDialog = true;
-          });
-      });
+    getUserData({ FB }) {
+      let that = this;
+      if (FB && FB.api) {
+        FB.api("/me", { fields: "name,email" }, function(response) {
+          axios
+            .post("http://localhost:9000/auth/facebook-auth", {
+              response
+            })
+            .then(backendResponse => {
+              console.log(that);
+              this.successMessage = response.name;
+              that.nextStep({
+                step: 1,
+                successRegister: this.successMessage
+              });
+              console.log(backendResponse);
+              console.log(response);
+            })
+            .catch(err => {
+              console.log(err);
+              this.errorMessage = err.message;
+              this.authDialog = true;
+            });
+        });
+      }
     },
     handleClickSignIn() {
+      let that = this;
       this.$gAuth
         .signIn()
         .then(GoogleUser => {
@@ -102,7 +109,7 @@ export default {
         })
         .then(response => {
           this.successMessage = response.data.result.user.email;
-          this.nextStep({ step: 1, successRegister: this.successMessage });
+          that.nextStep({ step: 1, successRegister: this.successMessage });
         })
         .catch(err => {
           this.errorMessage = err.message;
