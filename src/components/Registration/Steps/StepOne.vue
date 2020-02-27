@@ -174,6 +174,7 @@ export default {
     }
     .spinner {
       height: 30px !important;
+      display: none;
     }
   }
 }
